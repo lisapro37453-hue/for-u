@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love</title>
+    <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        overflow: hidden;
+        font-family: 'Caveat', cursive;
+
+        background: linear-gradient(
+            120deg,
+            #f6a6c1,
+            #e8b5dc,
+            #c6b5ed,
+            #b9c9f1,
+            #f5c5bb
+        );
+
+        background-size: 300% 300%;
+        animation: gradient 16s ease infinite;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        position: relative;
+    }
+
+    /* Нежные цветочные узоры */
+
+    .flowers {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    .flower {
+        position: absolute;
+        color: rgba(255, 255, 255, 0.28);
+        font-size: 65px;
+        font-family: Georgia, serif;
+        animation: float 8s ease-in-out infinite;
+    }
+
+    .flower:nth-child(1) {
+        top: 8%;
+        left: 7%;
+        font-size: 75px;
+    }
+
+    .flower:nth-child(2) {
+        top: 70%;
+        left: 4%;
+        font-size: 55px;
+        animation-delay: 2s;
+    }
+
+    .flower:nth-child(3) {
+        top: 15%;
+        right: 8%;
+        font-size: 60px;
+        animation-delay: 3s;
+    }
+
+    .flower:nth-child(4) {
+        bottom: 8%;
+        right: 12%;
+        font-size: 85px;
+        animation-delay: 1s;
+    }
+
+    .flower:nth-child(5) {
+        top: 45%;
+        left: 48%;
+        font-size: 40px;
+        animation-delay: 4s;
+    }
+
+    .flower:nth-child(6) {
+        top: 85%;
+        left: 42%;
+        font-size: 35px;
+        animation-delay: 2s;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 3%;
+    }
+
+    .left {
+        width: 50%;
+        padding: 10px;
+        animation: appear 2s ease;
+    }
+
+    .left h1 {
+        font-size: clamp(45px, 6vw, 75px);
+        font-weight: 500;
+        margin-bottom: 30px;
+    }
+
+    .left p {
+        font-size: clamp(25px, 3vw, 34px);
+        line-height: 1;
+        max-width: 520px;
+        white-space: pre-line;
+    }
+
+    .right {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .heart {
+        font-family: Georgia, serif;
+        font-size: clamp(130px, 21vw, 250px);
+        color: white;
+
+        text-shadow:
+            0 0 20px rgba(255,255,255,0.8),
+            0 0 60px rgba(255,120,180,0.8);
+
+        animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    @keyframes heartbeat {
+        0%, 100% {
+            transform: scale(1);
+        }
+        15% {
+            transform: scale(1.15);
+        }
+        30% {
+            transform: scale(1);
+        }
+        45% {
+            transform: scale(1.2);
+        }
+        60% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes appear {
+        from {
+            opacity: 0;
+            transform: translateX(-35px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-15px) rotate(10deg);
+        }
+    }
+
+    @media (max-width: 650px) {
+        body {
+            overflow: auto;
+        }
+
+        .container {
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            padding: 25px;
+}
+
+        .left, .right {
+            width: 100%;
+        }
+
+        .left {
+            padding: 10px;
+        }
+
+        .left h1 {
+            font-size: 48px;
+        }
+
+        .left p {
+            font-size: 27px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .heart {
+            font-size: 125px;
+        }
+    }
+</style>
+<div class="flowers">
+    <span class="flower">✿</span>
+    <span class="flower">❀</span>
+    <span class="flower">✾</span>
+    <span class="flower">❀</span>
+    <span class="flower">✿</span>
+    <span class="flower">✾</span>
+</div>
+
+<div class="container">
+
+    <div class="left">
+
+        <h1>Моему любимому Ерке</h1>
+
+        <p>Твои глаза - густой туман,
+            <br>хочу навечно в нем укрыться.
+        <br>Смотреть в глаза, держать за руку,
+        <br>В слезах смеяться и с тобой забыться.
+                </div>
+
+    <div class="right">
+        <div class="heart">♥️</div>
+    </div>
+
+</div>
+
